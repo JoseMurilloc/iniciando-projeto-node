@@ -9,6 +9,7 @@ interface CreateAppointmentDTO {
 class AppointmentsRepository {
   private appointments: Appointment[];
 
+
   constructor() {
     this.appointments = [];
   }
@@ -30,6 +31,7 @@ class AppointmentsRepository {
     const appointment = new Appointment({ provider, date });
 
     this.appointments.push(appointment);
+    // console.log(this.appointments.length);
 
     return appointment;
   }
