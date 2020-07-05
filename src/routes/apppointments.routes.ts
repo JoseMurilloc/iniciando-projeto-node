@@ -20,7 +20,10 @@ appoitmentsRoutes.post('/', (request, response) => {
   if (findAppoitmentInSameDate)
     return response.status(400).json({ error: 'Is appoitment is already booked'})
 
-  const appointment = appointmentsRepository.create(provider, parsedDate);
+  const appointment = appointmentsRepository.create({
+    provider,
+    date: parsedDate
+  });
 
   response.json(appointment);
 });
